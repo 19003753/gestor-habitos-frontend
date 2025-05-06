@@ -21,7 +21,7 @@ export default function LoginPage() {
     setError("");
 
     try {
-      const res = await fetch("http://localhost:5002/usuarios/login", {
+      const res = await fetch("https://gestor-habitos-backend.vercel.app/usuarios/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

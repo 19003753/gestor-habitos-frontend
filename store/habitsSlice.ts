@@ -20,7 +20,7 @@ const initialState: HabitsState = {
 //get habits list
 export const fetchHabitsThunk = createAsyncThunk("habits/fetchHabits", async () => {
   const userId = localStorage.getItem("userId");
-  const response = await fetch(`http://localhost:5002/habitos/${userId}`);
+  const response = await fetch(`https://gestor-habitos-backend.vercel.app/habitos/${userId}`);
   return await response.json();
 });
 
@@ -28,7 +28,7 @@ export const fetchHabitsThunk = createAsyncThunk("habits/fetchHabits", async () 
 export const updateStreakThunk = createAsyncThunk(
   "habits/updateStreak",
   async (habitId: string) => {
-    const response = await fetch(`http://localhost:5002/habitos/marcar/${habitId}`, {
+    const response = await fetch(`https://gestor-habitos-backend.vercel.app/habitos/marcar/${habitId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
     });

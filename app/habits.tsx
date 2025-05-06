@@ -81,7 +81,7 @@ export default function Habits() {
     if (!confirmar) return;
   
     try {
-      const res = await fetch(`http://localhost:5002/habitos/eliminar/${habit._id}`, {
+      const res = await fetch(`https://gestor-habitos-backend.vercel.app/habitos/eliminar/${habit._id}`, {
         method: "DELETE",
       });
   
